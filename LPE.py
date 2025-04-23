@@ -28,13 +28,14 @@ def main_menu():
 def day_converter():
     while True: 
         print("How many days been left?")
-        userInput = int(input("> "))
-
-        try:
-            userInput = int(input("> "))  
-        except ValueError: 
-            print("Invalid input! Please enter a valid number.")
-            continue 
+        userInput = input("> ")
+        
+        # Eğer input sayı değilse hata verelim
+        if not userInput.isdigit():
+            print("Error: Please enter a valid number!")
+            continue  # Hatalı giriş yapıldığında yeniden sorar
+        
+        userInput = int(userInput)  # Artık güvenle tam sayıya çevirebiliriz
 
         while True: 
             print("Which time format do you prefer?")
@@ -59,7 +60,5 @@ def day_converter():
                 return  
             else:
                 print("You typed an undefined key, try again.")
-
-
 
 main_menu()
