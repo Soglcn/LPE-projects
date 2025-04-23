@@ -1,3 +1,5 @@
+#Just daily usefull programs for myself.
+
 def main_menu():
     projects = {
         'LPE1': 'Day Converter'
