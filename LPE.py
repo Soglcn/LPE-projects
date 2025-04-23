@@ -1,4 +1,4 @@
-#Just daily usefull programs for myself.
+#Just daily usefull programs for myself. Synced!
 
 def main_menu():
     projects = {
