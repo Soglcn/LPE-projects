@@ -30,6 +30,12 @@ def day_converter():
         print("How many days been left?")
         userInput = int(input("> "))
 
+        try:
+            userInput = int(input("> "))  
+        except ValueError: 
+            print("Invalid input! Please enter a valid number.")
+            continue 
+
         while True: 
             print("Which time format do you prefer?")
             print("Type for = hours: 'H', for minutes: 'M' or for seconds: 'S', for back: 'B' and for quit: 'Q'")
