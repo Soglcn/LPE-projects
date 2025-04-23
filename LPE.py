@@ -2,10 +2,12 @@
 
 def main_menu():
     projects = {
-        'LPE1': 'Day Converter'
+        'LPE1': 'Day Converter',
+        'LPE2': 'Kilograms to Pounds'
     }
 
     while True:
+        print("--------APP LIBRARY---------")
         print("Welcome... Please input the start command for the program that you want to start!")
         print("(For see all programs, please type 'S')")
         print("(For quit, type 'Q')")
@@ -13,7 +15,7 @@ def main_menu():
 
         if mainSelection == 'Q':
             print("Quitting...")
-            break
+            exit()
         elif mainSelection == 'S':
             print("Available projects:")
             for code, desc in projects.items():
@@ -21,21 +23,24 @@ def main_menu():
         elif mainSelection in projects:
             if mainSelection == 'LPE1':
                 day_converter()
+            elif mainSelection == 'LPE2':
+                kg_converter()
         else:
             print("You typed an undefined project name, try again.")
 
 #Day Converter
 def day_converter():
     while True: 
+        print("--------Day Converter App---------")
         print("How many days been left?")
         userInput = input("> ")
         
-        # Eğer input sayı değilse hata verelim
+
         if not userInput.isdigit():
             print("Error: Please enter a valid number!")
-            continue  # Hatalı giriş yapıldığında yeniden sorar
+            continue 
         
-        userInput = int(userInput)  # Artık güvenle tam sayıya çevirebiliriz
+        userInput = int(userInput) 
 
         while True: 
             print("Which time format do you prefer?")
@@ -60,5 +65,33 @@ def day_converter():
                 return  
             else:
                 print("You typed an undefined key, try again.")
+
+def kg_converter():
+    while True: 
+        print("--------KG to LBS Converter---------")
+        print("Please enter the weight as KG")
+
+        try:
+            kgWeight = int(input("> "))
+        except ValueError:
+            print("Error: Please enter a valid number!")
+            continue 
+
+        result = kgWeight * 2.204
+        print("The result is: ", result, "lbs")
+
+        while True:
+            print("Type 'N' for new calculations or 'Q' for main menu")
+            userInput = input("> ").upper()
+
+            if userInput == 'N':
+                break  
+            elif userInput == 'Q':
+                main_menu() 
+                return
+            else:
+                print("You typed a wrong key. Please type 'N' or 'Q'")
+
+
 
 main_menu()
