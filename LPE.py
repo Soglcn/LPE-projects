@@ -1,6 +1,12 @@
 #Just daily usefull programs for myself. 260425-Updated!
+import os
 
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+#Main Menu
 def main_menu():
+    clear()
     projects = {
         'LPE1': 'Day Converter',
         'LPE2': 'Kilograms to Pounds',
@@ -17,25 +23,32 @@ def main_menu():
 
         if mainSelection == 'Q':
             print("Quitting...")
+            clear()
             exit()
         elif mainSelection == 'S':
             print("Available projects:")
             for code, desc in projects.items():
                 print(f" - {code}: {desc}")
+            input("\n(Press Enter to return to the main menu)")
         elif mainSelection in projects:
             if mainSelection == 'LPE1':
                 day_converter()
+                clear()
             elif mainSelection == 'LPE2':
                 kg_converter()
+                clear()
             elif mainSelection == 'LPE3':
                 sleep_calculator()
+                clear()
             elif mainSelection == 'LPE4':
                 increase_calculator()
+                clear()
         else:
             print("You typed an undefined project name, try again.")
 
 #Day Converter
 def day_converter():
+    clear()
     while True: 
         print("--------Day Converter App---------")
         print("How many days been left?")
@@ -72,7 +85,9 @@ def day_converter():
             else:
                 print("You typed an undefined key, try again.")
 
+#KG Converter
 def kg_converter():
+    clear()
     while True: 
         print("--------KG to LBS Converter---------")
         print("Please enter the weight as KG")
@@ -98,8 +113,9 @@ def kg_converter():
             else:
                 print("You typed a wrong key. Please type 'N' or 'Q'")
 
-
+#Time Calculator
 def sleep_calculator():
+    clear()
     while True:
         minutes = 60
 
@@ -175,10 +191,12 @@ def sleep_calculator():
                 return  
             else:
                 print("You typed a wrong key. Please type 'N' or 'Q'.")
-                
-def increase_calculator():
 
+#Percentage Calculator           
+def increase_calculator():
+    clear()
     def increment():
+        clear()           
         while True:
             try:
                 print("Input your starting number: ")
@@ -206,8 +224,63 @@ def increase_calculator():
             except ValueError:
                 print("Invalid input. Please enter a valid number.\n")
 
+    def findPercentage():
+        clear()
+        while True:
+            try:
+                print("Input the value: ")
+                fpValue = float(input("> "))
 
+                print("Input the percentage ratio: ")
+                fpPercentage = float(input("> "))
+
+                fpResult = (fpValue * fpPercentage) / 100
+                print(f" {fpPercentage}% of the {fpValue} is {fpResult:.2f}")
+
+                print("Press 'N' for new calculation , Press 'B' for main menu. ")
+                userChoice = str(input("> ")).upper()
+
+                if userChoice == 'N':
+                    continue
+                    clear()
+                elif userChoice == 'Q':
+                    return
+                else:
+                    print("You selected wrong, try again!\n")
+
+            except ValueError:
+                print("Invalid input. Please enter a valid number.\n")
+
+    def percentage_change():
+        clear()
+        while True:
+            try:
+                print("Input current value:")
+                currentNum = float(input("> "))
+
+                print("Input old value: ")
+                oldValue = float(input("> "))
+
+                changeValue = (currentNum - oldValue) / oldValue * 100
+
+                print(f" The changes between of {currentNum} and {oldValue} is {changeValue:.2f}%")
+
+                while True:
+                    print("'N' for new calculation or 'B' for back")
+                    menuSelection = input("> ").upper()
+
+                    if menuSelection == 'N':
+                        break
+                    elif menuSelection == 'B':
+                        return
+                    else:
+                        print("You selected wrong, try again!\n")
+            
+            except ValueError:
+                print("Invalid input. Please enter a valid number.\n")
+    
     while True:
+        clear()
         print("Select the calculating type:")
         print("- 'I' for Increment by Percentage")
         print("- 'F' for Find Percentage of a Value")
@@ -220,17 +293,18 @@ def increase_calculator():
         if selectedWork == 'I':
             increment()
         elif selectedWork == 'F':
-            print("F")
+            findPercentage()
         elif selectedWork == 'C':
-            print("C")
+            percentage_change()
         elif selectedWork == 'R':
             print("R")
         elif selectedWork == 'Q':
             print("Returning main menu...")
+            clear()
             return
         else:
             print("You selected wrong, try again!")
             continue
 
-
+#Run
 main_menu()
