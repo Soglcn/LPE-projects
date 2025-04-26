@@ -177,7 +177,26 @@ def sleep_calculator():
                 print("You typed a wrong key. Please type 'N' or 'Q'.")
                 
 def increase_calculator():
-    print("increase calc.")
+    while True:
+        print("Select the calculating type:")
+        print("- 'I' for Increment by Percentage")
+        print("- 'F' for Find Percentage of a Value")
+        print("- 'C' for Percentage Change")
+        print("- 'R' for Percentage Reduction")
+        
+        selectedWork = str(input("> ")).upper()
+        
+        if selectedWork == 'I':
+            print("I")
+        elif selectedWork == 'F':
+            print("F")
+        elif selectedWork == 'C':
+            print("C")
+        elif selectedWork == 'R':
+            print("R")
+        else:
+            print("You selected wrong, try again")
+            return
 
 
 main_menu()
