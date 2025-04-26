@@ -4,7 +4,8 @@ def main_menu():
     projects = {
         'LPE1': 'Day Converter',
         'LPE2': 'Kilograms to Pounds',
-        'LPE3': 'Sleep Calculator'
+        'LPE3': 'Sleep Calculator',
+        'LPE4': 'Increase Calculator'
     }
 
     while True:
@@ -28,6 +29,8 @@ def main_menu():
                 kg_converter()
             elif mainSelection == 'LPE3':
                 sleep_calculator()
+            elif mainSelection == 'LPE4':
+                increase_calculator()
         else:
             print("You typed an undefined project name, try again.")
 
@@ -172,6 +175,9 @@ def sleep_calculator():
                 return  
             else:
                 print("You typed a wrong key. Please type 'N' or 'Q'.")
+                
+def increase_calculator():
+    print("increase calc.")
 
 
 main_menu()
