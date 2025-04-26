@@ -1,4 +1,4 @@
-#Just daily usefull programs for myself. 260425-Updated!
+#Just daily usefull programs for myself. 260425-DayEnd!
 import os
 
 def clear():
