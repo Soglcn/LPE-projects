@@ -177,26 +177,60 @@ def sleep_calculator():
                 print("You typed a wrong key. Please type 'N' or 'Q'.")
                 
 def increase_calculator():
+
+    def increment():
+        while True:
+            try:
+                print("Input your starting number: ")
+                userValue = float(input("> "))
+
+                print("Input your increment percentage: ")
+                percentage = float(input("> "))
+            
+                rate = percentage / 100
+                increasedValue = userValue * rate
+                resultIncreasing = userValue + increasedValue
+
+                print(f"Result after {percentage}% increment: {resultIncreasing}\n") 
+
+                while True:
+                    print("'N' for new calculation or 'B' for back")
+                    menuSelection = str(input("> ")).upper()
+
+                    if menuSelection == 'N':
+                        break
+                    elif menuSelection == 'B':
+                        return 
+                    else:
+                        print("You selected wrong, try again!\n")
+            except ValueError:
+                print("Invalid input. Please enter a valid number.\n")
+
+
     while True:
         print("Select the calculating type:")
         print("- 'I' for Increment by Percentage")
         print("- 'F' for Find Percentage of a Value")
         print("- 'C' for Percentage Change")
         print("- 'R' for Percentage Reduction")
+        print("- 'Q' for to return main menu")
         
         selectedWork = str(input("> ")).upper()
         
         if selectedWork == 'I':
-            print("I")
+            increment()
         elif selectedWork == 'F':
             print("F")
         elif selectedWork == 'C':
             print("C")
         elif selectedWork == 'R':
             print("R")
-        else:
-            print("You selected wrong, try again")
+        elif selectedWork == 'Q':
+            print("Returning main menu...")
             return
+        else:
+            print("You selected wrong, try again!")
+            continue
 
 
 main_menu()
