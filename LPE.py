@@ -278,6 +278,36 @@ def increase_calculator():
             
             except ValueError:
                 print("Invalid input. Please enter a valid number.\n")
+
+    def percentage_reduction():
+        clear()
+        while True:
+            try:
+                print("Input current value:")
+                currentValue = float(input("> "))
+
+                print("Input percentage:")
+                reducePercentage = float(input("> "))
+
+                reductionResult = currentValue - (currentValue * (reducePercentage / 100))
+
+                print(f" The result is {reductionResult}")
+
+                
+                while True:
+                    print("'N' for new calculation or 'B' for back")
+                    menuSelection = input("> ").upper()
+
+                    if menuSelection == 'N':
+                        break
+                    elif menuSelection == 'B':
+                        return
+                    else:
+                        print("You selected wrong, try again!\n")
+
+
+            except ValueError:
+                print("Invalid input. Please enter a valid number.\n")
     
     while True:
         clear()
@@ -297,7 +327,7 @@ def increase_calculator():
         elif selectedWork == 'C':
             percentage_change()
         elif selectedWork == 'R':
-            print("R")
+            percentage_reduction()
         elif selectedWork == 'Q':
             print("Returning main menu...")
             clear()
