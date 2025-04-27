@@ -5,6 +5,7 @@ from functions.day_converter import day_converter
 from functions.kg_converter import kg_converter
 from functions.time_calculator import time_calculator
 from functions.percentage_calculator import increase_calculator
+
 def main_menu():
     clear()
     projects = {
