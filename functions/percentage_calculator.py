@@ -1,4 +1,4 @@
-#Percentage Calculator           
+ #Percentage Calculator           
 from functions.clear import clear
 
 def increase_calculator():
