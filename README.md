@@ -5,7 +5,7 @@ In an effort to enhance my Python skills (As someone who started with C programm
 
 By creating these applications, I not only aim to strengthen my understanding of Python but also to create tools that can be useful for daily life. This repository serves as both a personal learning experience and a showcase of functional, easy-to-use programs.
 
-I'll be a Data Scientist when I grown up! 🤨
+I'll be a Data Scientist when I grow up! 🤨
 
 
 ## Projects 
