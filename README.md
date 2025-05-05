@@ -1,5 +1,5 @@
 # LPE-projects
-Welcome to the LPE-Projects repository!
+Heeey! Welcome to the LPE-Projects repository!
 
 In an effort to enhance my Python skills (As someone who started with C programming... 😅😅😅), I embarked on a journey to develop practical programs that can simplify everyday tasks. Each project in this collection is designed to address common, small-scale problems through clean and efficient Python code.
 
